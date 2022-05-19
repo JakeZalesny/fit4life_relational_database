@@ -13,8 +13,6 @@ class CreateDatabase :
         except Error as e :
             print(e)
         
-        finally :
-            if self.conn :
-                self.conn.close()
+        
         return self.conn
     

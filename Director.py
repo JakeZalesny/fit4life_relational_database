@@ -10,6 +10,7 @@ class Director:
         self.CREATE_DATABASE = CreateDatabase()
         self._CONNECTION = CreateDatabase.create_database()
         self._DEFAULT_WORKOUTS = CreateDefaultWorkouts(self._CONNECTION)
+        self._CONNECTION.close()
     
     def direct() :
         pass

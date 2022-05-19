@@ -15,6 +15,7 @@ class CreateDefaultWorkouts :
         self.conn = connection.cursor()
     
     def create_tables(self) :
+        
         for muscle_group in Constants.DEFAULT_MUSCLE_GROUPS :
             value = (muscle_group)
             self.conn.execute("""CREATE TABLE IF NOT EXISTS ? ([workout_id] INTEGER PRIMARY KEY AUTOINCREMENT, 
