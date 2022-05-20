@@ -9,7 +9,7 @@ from sqlite3 import Connection
 
 
 class MuscleGroup :
-    def __init__(self, name: str, workouts: str, connection: Connection) -> None:
+    def __init__(self, name: str, workouts: str, connection: Connection, cursor) -> None:
         self.name = name
         self.workouts = workouts
         self.connection = connection

@@ -3,7 +3,7 @@ CONSTANTS
 """
 
 DEFAULT_MUSCLE_GROUPS = ["Shoulders", "Chest", "Back", "Biceps", "Triceps", "Legs", "Abs"]
-DATABASE_FILE = "Fit4Life"
+DATABASE_FILE = "fit4Life.db"
 DEFAULT_WORKOUTS = {
     "Shoulders":["Seated Dumbell Press", "Arnolds", "Standing Dumbell Flies", "Face Pulls", "EZ bar High Pull",
                 "Seated Barbell Press", "Machine Shoulder Press", "Bent Over Reverse Fly", "Dumbell Incline Row",

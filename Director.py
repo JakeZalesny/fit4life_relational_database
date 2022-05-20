@@ -1,5 +1,5 @@
 import Constants
-from CreateDatabase import CreateDatabase
+from CreateConnection import CreateConnection, CreateDatabase
 from CreateDefaultWorkouts import CreateDefaultWorkouts
 """
 
@@ -7,8 +7,8 @@ from CreateDefaultWorkouts import CreateDefaultWorkouts
 
 class Director: 
     def __init__(self) -> None :
-        self.CREATE_DATABASE = CreateDatabase()
-        self._CONNECTION = CreateDatabase.create_database()
+        self.CREATE_CONNECTION = CreateConnection()
+        self._CONNECTION = CreateConnection.create_connection()
         self._DEFAULT_WORKOUTS = CreateDefaultWorkouts(self._CONNECTION)
         self._CONNECTION.close()
     
