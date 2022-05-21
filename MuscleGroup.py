@@ -33,7 +33,7 @@ class MuscleGroup :
                 workouts = self.cursor.fetchall()
                 
                 if workout.title() not in workouts :
-                    self.cursor.execute("""INSERT INTO ? VALUES( , ?) """, values)
+                    self.cursor.execute("""INSERT INTO ? (workout_name) VALUES(?) """, values)
                 
                 else :
                     print("ERROR: Workout already exists")
