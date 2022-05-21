@@ -25,5 +25,11 @@ class AddWorkout:
             workout = str(input("What is the name of the workout? "))
             values = (self.muscle_group, workout)
             self.cur.execute("INSERT INTO ? (workout_name) VALUES (?)", values)
-            add_workout = bool(input("Would you like to add another workout? "))
+            add_new_workout = input("Would you like to add another workout? (Yes/No)")
+            
+            if add_new_workout.title() == "No" :
+                add_workout = False
+            
+            else :
+                add_workout = True
     

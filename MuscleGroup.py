@@ -44,7 +44,13 @@ class MuscleGroup :
                 print("ERROR: Muscle Group does not exist")
                 add_workout = True
             
-            add_workout = input("Would you like to add a workout? ")
+            add_new_workout = input("Would you like to add a workout? ")
+            
+            if add_new_workout.title() == "No" :
+                add_workout = False
+
+            else :
+                add_workout = True 
         
         self.connection.commit()
     
