@@ -11,7 +11,8 @@ class UserInterface:
         4. Add Workout
         5. Delete Workout
         6. Modify Maxes
-        7. Calory Tracker
+        7. Check Current Workouts
+        8. Quit
         """
 
     def get_input(self) -> int:

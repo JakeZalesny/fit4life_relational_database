@@ -31,11 +31,13 @@ class Director:
         self._MUSCLE_GROUPS.add_muscle_groups(self._TRICEPS)
 
         self._LIST_OF_MUSCLES = self._MUSCLE_GROUPS.get_list_of_groups()
+        current_workouts = self.CREATE_CONNECTION.check_status()
 
         for muscle in self._LIST_OF_MUSCLES :
             self._DEFAULT_WORKOUTS.create_table(muscle)
             for workout in muscle.get_workouts() :
-                self._DEFAULT_WORKOUTS.add_default_workouts(workout, muscle)
+                if workout not in current_workouts :
+                    self._DEFAULT_WORKOUTS.add_default_workouts(workout, muscle)
 
          
 
