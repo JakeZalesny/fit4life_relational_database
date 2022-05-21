@@ -25,6 +25,6 @@ class CreateDefaultWorkouts :
     def add_default_workouts(self, workouts: MuscleGroup, muscle_group: MuscleGroup):
 
         values = (muscle_group, workouts)
-        self.conn.execute("INSERT INTO ? VALUES( , ?, 0, 0, null)", values)
+        self.conn.execute("INSERT INTO ? VALUES( , ?)", values)
         
         self.connection.commit()
