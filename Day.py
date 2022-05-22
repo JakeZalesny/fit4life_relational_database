@@ -19,7 +19,7 @@ class Day:
         return self.name
 
     def set_muscle_group(self):
-        self.muscle_group = input(f"What muscle do you want to work today({self.day.title()}? ")
+        self.muscle_group = input(f"What muscle do you want to work {self.get_name()}? ")
     
     def get_muscle_group(self):
         return self.muscle_group
@@ -27,7 +27,7 @@ class Day:
     def get_all_workouts(self, muscle_group_list: list):
         if self.muscle_group in muscle_group_list :
             value = (self.muscle_group)
-            self.cur.execute("SELECT * FROM ?", value)
+            self.cur.execute("SELECT * FROM '{}'".format(value))
             self.all_workouts = self.cur.fetchall()
         
         return self.all_workouts

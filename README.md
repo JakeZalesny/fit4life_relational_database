@@ -13,7 +13,7 @@ I'm trying to learn how to better work with Databases so that I can efficiently 
 
 I wrote a fitness program that runs off of a relational database. It's supposed to write your daily splits for you and you're supposed to be able to use this on a daily basis. 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/zAkxtQMuuKU)
 
 # Relational Database
 

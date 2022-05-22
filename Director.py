@@ -58,8 +58,8 @@ class Director:
                 if workout not in current_workouts :
                     self._DEFAULT_WORKOUTS.add_default_workouts(workout, muscle)
         
-        self._MAXES.create_maxes_table()
-        self._MAXES.set_maxes()
+        #self._MAXES.create_maxes_table()
+        #self._MAXES.set_maxes()
         user_choice = 0
         
         while user_choice != 6 :

@@ -19,7 +19,6 @@ class Maxes:
         
 
     def set_maxes(self):
-        counter = 0
         workouts = Constants.MAXES
         self.cur.execute("SELECT workout_name FROM Maxes")
         existing_workouts = self.cur.fetchall()

@@ -23,17 +23,17 @@ class WriteSplit:
     def get_muscle_groups(self, list_of_muscles: list):
         muscle_group = self.day.set_muscle_group()
         all_workouts = self.day.get_all_workouts(list_of_muscles)
-        for i in self.workouts_per_day:
+        for i in range(0, 7):
             self.workouts_per_day[self.list_of_days[i]] = all_workouts
     
     def write_split(self):
         for day in self.list_of_days:
-            name = day.get_name()
-            workout_1 = self.workouts_per_day[name][random.randint(0, len(self.workouts_per_day[name]))]
-            workout_2 = self.workouts_per_day[name][random.randint(0, len(self.workouts_per_day[name]))]
-            workout_3 = self.workouts_per_day[name][random.randint(0, len(self.workouts_per_day[name]))]
-            workout_4 = self.workouts_per_day[name][random.randint(0, len(self.workouts_per_day[name]))]
-            workout_5 = self.workouts_per_day[name][random.randint(0, len(self.workouts_per_day[name]))]
+            name = self.day.get_name()
+            workout_1 = self.workouts_per_day[name][random.randint(0, 9)]
+            workout_2 = self.workouts_per_day[name][random.randint(0, 9)]
+            workout_3 = self.workouts_per_day[name][random.randint(0, 9)]
+            workout_4 = self.workouts_per_day[name][random.randint(0, 9)]
+            workout_5 = self.workouts_per_day[name][random.randint(0, 9)]
             
             print(name)
             print()

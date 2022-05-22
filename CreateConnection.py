@@ -21,7 +21,7 @@ class CreateConnection:
     
     def check_status(self, muscle_group: MuscleGroup):
         self.cur = self.conn.cursor()
-        values = (muscle_group)
+        values = (muscle_group.get_name())
         self.cur.execute("""SELECT workout_name FROM "{}"  """.format(values))
         current_workouts = self.cur.fetchall()
         return current_workouts
