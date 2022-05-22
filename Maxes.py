@@ -23,14 +23,13 @@ class Maxes:
         workouts = Constants.MAXES
         self.cur.execute("SELECT workout_name FROM Maxes")
         existing_workouts = self.cur.fetchall()
-        for i in range(len(workouts)):
-            if workouts[i] != existing_workouts[i] and existing_workouts[i] != None:
-                workouts.append(existing_workouts[i])
+        for i in range(len(existing_workouts) - 1):
+            workouts.append(existing_workouts[i])
 
         
-        for workout in workouts :
-            self.maxes[workout] = int(input(f"What is your max {workout}? "))
-            values = (workout ,self.maxes)
+        for workout in range(len(workouts) - 1) :
+            self.maxes[workout] = int(input(f"What is your max {workouts[workout]}? "))
+            values = (workout ,self.maxes[workout])
             self.cur.execute("""INSERT INTO Maxes (workout_name, max) VALUES (?, ?)""", values)
             self.conn.commit()
             

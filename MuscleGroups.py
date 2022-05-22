@@ -5,7 +5,7 @@ import MuscleGroup
 
 class MuscleGroups :
     def __init__(self) -> None:
-        self._list_of_groups : list = None
+        self._list_of_groups : list = []
     
     def add_muscle_groups(self, muscle_group: MuscleGroup) :
         self._list_of_groups.append(muscle_group)

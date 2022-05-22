@@ -5,7 +5,8 @@ import sqlite3
 from Director import Director
 
 def main() :
-    Director.direct()
+    director = Director()
+    director.direct()
 
 if __name__ == "__main__":
     main()
