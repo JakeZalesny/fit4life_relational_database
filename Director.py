@@ -1,8 +1,13 @@
+from ast import While
+from AddWorkouts import AddWorkouts
 import Constants
 from CreateConnection import CreateConnection, CreateDatabase
 from CreateDefaultWorkouts import CreateDefaultWorkouts
+from DeleteWorkouts import DeleteWorkouts
+from Maxes import Maxes
 from MuscleGroup import MuscleGroup
 from MuscleGroups import MuscleGroups
+from UserInterface import UserInterface
 """
 
 """
@@ -13,6 +18,11 @@ class Director:
         self._CONNECTION = CreateConnection.create_connection()
         self._DEFAULT_WORKOUTS = CreateDefaultWorkouts(self._CONNECTION)
         self._MUSCLE_GROUPS = MuscleGroups()
+        self._MAXES = Maxes(self._CONNECTION)
+        self._ADD_WORKOUTS = AddWorkouts(self._CONNECTION)
+        self._DELETE_WORKOUTS = DeleteWorkouts(self._CONNECTION)
+        self._UI = None
+        
         
         self._SHOULDERS = MuscleGroup("Shoulders", Constants.DEFAULT_WORKOUTS["Shoulders"], self._CONNECTION)
         self._CHEST = MuscleGroup("Chest", Constants.DEFAULT_WORKOUTS["Chest"], self._CONNECTION)
@@ -38,6 +48,36 @@ class Director:
             for workout in muscle.get_workouts() :
                 if workout not in current_workouts :
                     self._DEFAULT_WORKOUTS.add_default_workouts(workout, muscle)
+        
+        self._MAXES.create_maxes_table()
+        self._MAXES.set_maxes()
+
+        while self._UI != 8 :
+           self._UI = UserInterface.get_input()
+           match self._UI :
+                case 1 :
+                   pass
+                
+                case 2 :
+                    pass
+
+                case 3 :
+                    pass
+
+                case 4 :
+                    self._ADD_WORKOUTS.add_workout(self._LIST_OF_MUSCLES)
+                
+                case 5 :
+                    self._DELETE_WORKOUTS.delete_workouts(self._LIST_OF_MUSCLES)
+                
+                case 6 :
+                    self._MAXES.get_modification()
+                    self._MAXES.modify_max()
+                
+                case 7 :
+                    MuscleGroup.get_workouts()
+
+                
 
          
 

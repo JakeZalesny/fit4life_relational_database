@@ -1,7 +1,7 @@
 """
 CONSTANTS
 """
-
+DAYS_OF_WEEK = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 DEFAULT_MUSCLE_GROUPS = ["Shoulders", "Chest", "Back", "Biceps", "Triceps", "Legs", "Abs"]
 MAXES = ["Shoulder Press", "Bench Press", "Deadlift", "Hammer Curl (10 reps)", "Squat"]
 DATABASE_FILE = "fit4Life.db"
